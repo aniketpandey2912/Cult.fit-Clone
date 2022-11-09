@@ -1,11 +1,16 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, Box } from "@chakra-ui/react";
 import "./App.css";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import AllRoutes from "./Routing/AllRoutes";
 
 function App() {
   return (
-    <>
-      <Heading textAlign="center">App</Heading>
-    </>
+    <Box>
+      <Navbar />
+      <AllRoutes />
+      <Footer />
+    </Box>
   );
 }
 
