@@ -58,8 +58,8 @@ function Footer() {
               // px="0%"
             >
               <GridItem w="100%" bg="none">
-                {gridItem1.map((el) => (
-                  <Box mb="18px">
+                {gridItem1.map((el, index) => (
+                  <Box mb="18px" key={el.index}>
                     <NavLink to={el.to} end>
                       {el.title}
                     </NavLink>
@@ -67,8 +67,8 @@ function Footer() {
                 ))}
               </GridItem>
               <GridItem w="100%" bg="none">
-                {gridItem2.map((el) => (
-                  <Box mb="32px">
+                {gridItem2.map((el, index) => (
+                  <Box mb="32px" key={el.index}>
                     <NavLink to={el.to} end>
                       {el.title}
                     </NavLink>
@@ -76,8 +76,8 @@ function Footer() {
                 ))}
               </GridItem>
               <GridItem w="100%" bg="none">
-                {gridItem3.map((el) => (
-                  <Box mb="32px">
+                {gridItem3.map((el, index) => (
+                  <Box mb="32px" key={el.index}>
                     <NavLink to={el.to} end>
                       {el.title}
                     </NavLink>
@@ -114,8 +114,9 @@ function Footer() {
             {/* Social media icons */}
             <Center py="65px">
               {/* logic for icons */}
-              {socialmediaIcons.map((el) => (
+              {socialmediaIcons.map((el, index) => (
                 <NavLink
+                  key={el.index}
                   to={el.to}
                   style={({ isActive }) =>
                     isActive
@@ -139,11 +140,13 @@ function Footer() {
 
       {/* Part-2 */}
       <Box bg="#333" h="auto" w="100%" py="40px" color="white">
-        <Text textAlign="center" mb="15px">Related Search</Text>
+        <Text textAlign="center" mb="15px">
+          Related Search
+        </Text>
         <Grid templateColumns="repeat(6, 1fr)" gap="3%" h="auto">
           <GridItem w="100%" bg="none">
-            {rlatedSearch1.map((el) => (
-              <Box mb="3px">
+            {rlatedSearch1.map((el, index) => (
+              <Box mb="3px" key={el.index}>
                 <NavLink to={el.to} end>
                   {el.title}
                 </NavLink>
@@ -151,8 +154,8 @@ function Footer() {
             ))}
           </GridItem>
           <GridItem w="100%" bg="none">
-            {rlatedSearch2.map((el) => (
-              <Box mb="3px">
+            {rlatedSearch2.map((el, index) => (
+              <Box mb="3px" key={el.index}>
                 <NavLink to={el.to} end>
                   {el.title}
                 </NavLink>
@@ -160,8 +163,8 @@ function Footer() {
             ))}
           </GridItem>
           <GridItem w="100%" bg="none">
-            {rlatedSearch3.map((el) => (
-              <Box mb="3px">
+            {rlatedSearch3.map((el, index) => (
+              <Box mb="3px" key={el.index}>
                 <NavLink to={el.to} end>
                   {el.title}
                 </NavLink>
@@ -169,8 +172,8 @@ function Footer() {
             ))}
           </GridItem>
           <GridItem w="100%" bg="none">
-            {rlatedSearch4.map((el) => (
-              <Box mb="3px">
+            {rlatedSearch4.map((el, index) => (
+              <Box mb="3px" key={el.index}>
                 <NavLink to={el.to} end>
                   {el.title}
                 </NavLink>
@@ -178,8 +181,8 @@ function Footer() {
             ))}
           </GridItem>
           <GridItem w="100%" bg="none">
-            {rlatedSearch5.map((el) => (
-              <Box mb="3px">
+            {rlatedSearch5.map((el, index) => (
+              <Box mb="3px" key={el.index}>
                 <NavLink to={el.to} end>
                   {el.title}
                 </NavLink>
@@ -187,8 +190,8 @@ function Footer() {
             ))}
           </GridItem>
           <GridItem w="100%" bg="none">
-            {rlatedSearch6.map((el) => (
-              <Box mb="3px">
+            {rlatedSearch6.map((el, index) => (
+              <Box mb="3px" key={el.index}>
                 <NavLink to={el.to} end>
                   {el.title}
                 </NavLink>

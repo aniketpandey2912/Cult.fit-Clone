@@ -17,7 +17,8 @@ import {
 import { NavLink } from "react-router-dom";
 
 import { BsCart3, BsGeoAlt } from "react-icons/bs";
-import { CiUser } from "react-icons/ci";
+// import { CiUser } from "react-icons/ci";
+import PopUpLoginForm from "./PopUpLoginForm";
 
 // Menu options object
 const menuObj = [
@@ -66,11 +67,12 @@ function Navbar() {
         <Box width="30%" bg="none" color="white">
           <Flex align="center" bg="red">
             {/* Logic for menu options */}
-            {menuObj.map((el) =>
+            {menuObj.map((el, index) =>
               el.spacer ? (
                 <>
                   <NavLink
                     to={el.link}
+                    key={el.index}
                     style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
@@ -80,11 +82,12 @@ function Navbar() {
                       {el.heading}
                     </Heading>
                   </NavLink>
-                  <Spacer />
+                  <Spacer key={el.index} />
                 </>
               ) : (
                 <NavLink
                   to={el.link}
+                  key={el.index}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                   end
                 >
@@ -113,7 +116,7 @@ function Navbar() {
                 >
                   <Flex alignItems="center">
                     <Text>Actions</Text>
-                    <Icon as={BsGeoAlt} ml="5px" fontSize="24px" rightIcon />
+                    <Icon as={BsGeoAlt} ml="5px" fontSize="24px" />
                   </Flex>
                 </MenuButton>
                 <MenuList bg="#333">
@@ -153,14 +156,8 @@ function Navbar() {
 
             {/* Login-Avatar */}
             <NavLink to="#" end>
-              <Button
-                colorScheme="none"
-                borderRadius="50%"
-                h="44px"
-                _hover={{ bg: "#333" }}
-              >
-                <Icon as={CiUser} fontSize="20px" />
-              </Button>
+              {/* PopUp Login modal */}
+              <PopUpLoginForm />
             </NavLink>
             <Spacer />
 
