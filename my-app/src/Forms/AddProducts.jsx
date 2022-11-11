@@ -1,11 +1,18 @@
-import { Box, Input, FormControl, VStack, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Input,
+  FormControl,
+  VStack,
+  Heading,
+  Button,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { postGymProducts } from "../UtilityFunctions/Utils";
 
 const initState = {
-  title: null,
-  img: null,
-  price: null,
+  title: "",
+  img: "",
+  price: "",
   sold: false,
 };
 
@@ -15,18 +22,22 @@ function AddProduct() {
   // on input change
   const handleChange = (e) => {
     const { value, type, name } = e.target;
-    const val = "number" ? +value : value;
+    const val = type === "number" ? Number(value) : value;
 
-    setFormState({ ...formState, [name]: val });
+    setFormState({ ...formState, [name]: value });
   };
 
   // on submit - add product and set formState to initial state
   const handleSubmit = (e) => {
     e.preventDefault();
-    postGymProducts()
-      .then((res) => alert("Product added successfully"))
-      .catch((err) => alert("Something went wrong, can't be added"));
-    setFormState(initState);
+    postGymProducts(formState)
+      .then((res) => {
+        setFormState(initState);
+        alert("Product added successfully");
+      })
+      .catch((err) => {
+        alert("Something went wrong, can't be added");
+      });
   };
 
   return (
@@ -34,7 +45,7 @@ function AddProduct() {
       <Heading as="h4" size="lg" textAlign="center" color="green">
         Add Product
       </Heading>
-      <FormControl onSubmit={(e) => handleSubmit(e)}>
+      <FormControl>
         <VStack>
           <Input
             type="text"
@@ -57,12 +68,15 @@ function AddProduct() {
             value={formState.price}
             onChange={(e) => handleChange(e)}
           />
-          <Input
-            type="submit"
-            value="ADD PRODUCT"
-            bg="green"
+          <Button
+            w="100%"
+            colorScheme="green"
+            fontWeight="bold"
             cursor="pointer"
-          />
+            onClick={(e) => handleSubmit(e)}
+          >
+            ADD PRODUCT
+          </Button>
         </VStack>
       </FormControl>
     </Box>

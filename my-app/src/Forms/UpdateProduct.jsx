@@ -1,32 +1,48 @@
-import { Box, Input, FormControl, VStack, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Input,
+  FormControl,
+  VStack,
+  Heading,
+  Button,
+} from "@chakra-ui/react";
 import { useState } from "react";
-import { postGymProducts } from "../UtilityFunctions/Utils";
+import { patchGymProducts } from "../UtilityFunctions/Utils";
 
 const initState = {
-  title: null,
-  img: null,
-  price: null,
+  title: "",
+  img: "",
+  price: "",
   sold: false,
 };
 
 function UpdateProduct() {
   const [formState, setFormState] = useState(initState);
+  const [productId, setProductId] = useState("");
 
   // on input change
   const handleChange = (e) => {
     const { value, type, name } = e.target;
-    const val = "number" ? +value : value;
+    const val = type === "number" ? Number(value) : value;
 
     setFormState({ ...formState, [name]: val });
+  };
+
+  // product id set
+  const handleProductIdChange = (e) => {
+    setProductId(e.target.val);
   };
 
   // on submit - add product and set formState to initial state
   const handleSubmit = (e) => {
     e.preventDefault();
-    postGymProducts()
-      .then((res) => alert("Product added successfully"))
-      .catch((err) => alert("Something went wrong, can't be added"));
-    setFormState(initState);
+    patchGymProducts(productId, formState)
+      .then((res) => {
+        setFormState(initState);
+        setProductId("");
+        alert("Product updated successfully");
+      })
+      .catch((err) => alert("Something went wrong, can't be updated"));
   };
 
   return (
@@ -34,14 +50,14 @@ function UpdateProduct() {
       <Heading as="h4" size="lg" textAlign="center" color="grey">
         Update Product
       </Heading>
-      <FormControl onSubmit={(e) => handleSubmit(e)}>
+      <FormControl>
         <VStack>
           <Input
             type="number"
             placeholder="Enter product id"
             name="id"
-            value={formState.title}
-            onChange={(e) => handleChange(e)}
+            value={productId}
+            onChange={(e) => handleProductIdChange(e)}
           />
           <Input
             type="text"
@@ -64,12 +80,16 @@ function UpdateProduct() {
             value={formState.price}
             onChange={(e) => handleChange(e)}
           />
-          <Input
-            type="submit"
-            value="ADD PRODUCT"
-            bg="grey"
+          <Button
+            w="100%"
+            colorScheme="gray"
+            color="black"
+            fontWeight="bold"
             cursor="pointer"
-          />
+            onClick={(e) => handleSubmit(e)}
+          >
+            UPDATE PRODUCT
+          </Button>
         </VStack>
       </FormControl>
     </Box>

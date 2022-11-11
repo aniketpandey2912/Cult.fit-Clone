@@ -1,4 +1,11 @@
-import { Box, Input, FormControl, VStack, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Input,
+  FormControl,
+  VStack,
+  Heading,
+  Button,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { deleteGymProducts, postGymProducts } from "../UtilityFunctions/Utils";
 
@@ -8,10 +15,12 @@ function DeleteProduct() {
   // on submit - add product and set formState to initial state
   const handleSubmit = (e) => {
     e.preventDefault();
-    deleteGymProducts()
-      .then((res) => alert("Deleted product successfully"))
+    deleteGymProducts(productId)
+      .then((res) => {
+        setProductId("");
+        alert("Deleted product successfully");
+      })
       .catch((err) => alert("Something went wrong, cant't be deleted"));
-    setProductId("");
   };
 
   return (
@@ -19,7 +28,7 @@ function DeleteProduct() {
       <Heading as="h4" size="lg" textAlign="center" color="red">
         Delete Product
       </Heading>
-      <FormControl onSubmit={(e) => handleSubmit(e)}>
+      <FormControl>
         <VStack>
           <Input
             type="number"
@@ -29,12 +38,15 @@ function DeleteProduct() {
             onChange={(e) => setProductId(e.target.value)}
           />
 
-          <Input
-            type="submit"
-            value="DELETE PRODUCT"
-            bg="red"
+          <Button
+            w="100%"
+            colorScheme="red"
+            fontWeight="bold"
             cursor="pointer"
-          />
+            onClick={(e) => handleSubmit(e)}
+          >
+            DELETE PRODUCT
+          </Button>
         </VStack>
       </FormControl>
     </Box>
