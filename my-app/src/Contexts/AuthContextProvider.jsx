@@ -5,16 +5,24 @@ export const AuthContext = createContext();
 
 function AuthContextProvider({ children }) {
   const [isAuth, setIsAuth] = useState(true);
+  const [token, setToken] = useState("");
 
+  // user login
   const handleUserLogin = () => {
     setIsAuth(true);
   };
 
+  // user logout
   const handleUserLogout = () => {
     setIsAuth(false);
   };
 
-  const value = { isAuth, handleUserLogin, handleUserLogout };
+  // set token
+  const handleToken = (val) => {
+    setToken(val);
+  }
+
+  const value = { isAuth, token, handleUserLogin, handleUserLogout, handleToken };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

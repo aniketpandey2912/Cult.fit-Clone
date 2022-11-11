@@ -115,7 +115,7 @@ function Navbar() {
                   _hover={{ bg: "#fff", color: "#333" }}
                 >
                   <Flex alignItems="center">
-                    <Text>Actions</Text>
+                    <Text>Locations</Text>
                     <Icon as={BsGeoAlt} ml="5px" fontSize="24px" />
                   </Flex>
                 </MenuButton>
@@ -141,7 +141,10 @@ function Navbar() {
             <Spacer />
 
             {/* Get App */}
-            <NavLink to="#" end>
+            <NavLink
+              to="https://itunes.apple.com/us/app/cure-fit/id1217794588"
+              end
+            >
               <Button
                 colorScheme="transparent"
                 variant="outline"
