@@ -69,6 +69,7 @@ export const getGymProducts = () => {
 
 // post/add gym product
 export const postGymProducts = (data) => {
+  // console.log("post:", data);
   return axios({
     method: "post",
     url: "http://localhost:3000/products",
@@ -76,8 +77,12 @@ export const postGymProducts = (data) => {
       title: data.title,
       img: data.img,
       price: data.price,
+      sold: data.sold,
     },
-  }).then((res) => res);
+  }).then((res) => {
+    // console.log("res:", res);
+    return res;
+  });
 };
 
 // delete gym product
@@ -85,11 +90,15 @@ export const deleteGymProducts = (id) => {
   return axios({
     method: "delete",
     url: `http://localhost:3000/products/${id}`,
-  }).then((res) => res);
+  }).then((res) => {
+    console.log("res:", res);
+    return res;
+  });
 };
 
 // update gym product
 export const patchGymProducts = (id, data) => {
+  console.log("id:", id, "data:", data);
   return axios({
     method: "patch",
     url: `http://localhost:3000/products/${id}`,
