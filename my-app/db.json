@@ -1,0 +1,17 @@
+{
+    "admins": {"id":1,"type":"admin", "_firstName":"Aniket", "_lastName":"Pandey", "email":"aniketpandey2912@cultfit.com", "token":"admin0001"}
+    ,
+
+    "users":[
+        {"id":1,"type":"user", "_firstName":"Aniket", "_lastName":"Pandey", "email":"aniket@gmail.com", "token":"Qz29ycw121997"},
+        {"id":2,"type":"user", "_firstName":"Anurag", "_lastName":"Pandey", "email":"anurag@gmail.com", "token":"Bw25gnc082000"}
+    ],
+    "products":[
+        {"id":1, "title":"Dumbbell stand x1", "img":"https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/F15Wr3ApdJD5Nf3eHmigimNL", "price":"7499" },
+        {"id":2, "title":"Barbell x1 (adjustable)", "img":"https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/WNGb9o3xhWmsV2AAjeGZ7Fqz", "price":"12499" },
+        {"id":3, "title":"Signature Boxing Hand Wraps", "img":"https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/rqFrmhQat5ajC62f7rKCPU6m", "price":"499" },
+        {"id":4, "title":"Yoga Strap", "img":"https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/TtKkztyhA84pRRQb6SstMJSP", "price":"399" },
+        {"id":5, "title":"10kg Pack of 2 Competition Bumper Plate with rubber coating", "img":"https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/gDp17YA1XPMxLRmoYDXZLHmN", "price":"7499" },
+        {"id":6, "title":"cult.fit Kettlebell - 4 KG x 1 Pc", "img":"https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/UZ98jkaDsvS3DRoUmbyJD7Ei", "price":"1299" }
+    ]
+}
