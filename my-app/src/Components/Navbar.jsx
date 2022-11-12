@@ -40,7 +40,7 @@ const menuObj = [
     heading: "MIND",
     spacer: true,
   },
-  { id: 4, link: "https://cultsport.com/", heading: "STORE", spacer: false },
+  { id: 4, link: "/products", heading: "STORE", spacer: false },
 ];
 
 function Navbar() {
@@ -108,7 +108,7 @@ function Navbar() {
                 </>
               ) : (
                 <NavLink
-                  // key={el.index}
+                  key={el.id}
                   to={el.link}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                   end
