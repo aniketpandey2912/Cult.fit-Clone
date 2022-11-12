@@ -3,7 +3,7 @@ import axios from "axios";
 // ADMIN and USER utils
 // register request
 export const userRegisterRequest = (user) => {
-  console.log("register data:", user);
+  // console.log("register data:", user);
   return axios({
     method: "post",
     url: "https://reqres.in/api/users",
@@ -65,6 +65,11 @@ export const getAdmins = () => {
 // get gym products
 export const getGymProducts = () => {
   return axios.get("http://localhost:3000/products").then((res) => res);
+};
+
+// get gym single product
+export const getSingleGymProduct = (id) => {
+  return axios.get("http://localhost:3000/products/" + id).then((res) => res);
 };
 
 // post/add gym product

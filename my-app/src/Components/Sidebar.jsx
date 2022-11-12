@@ -21,9 +21,12 @@ import {
   MdSupportAgent,
   MdLogout,
 } from "react-icons/md";
+import { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthContextProvider";
 
 function Sidebar(props) {
   const { avatar, name } = props;
+  const { token } = useContext(AuthContext);
 
   return (
     <Box h="100%" border="0px solid black">
@@ -43,7 +46,7 @@ function Sidebar(props) {
             <Text
               fontSize="22px"
               fontWeight="bold"
-              color="white"
+              color="blue.400"
               textAlign="center"
             >
               {name || "Aniket Pandey (Admin)"}
@@ -51,10 +54,18 @@ function Sidebar(props) {
             <Text
               fontSize="16px"
               fontWeight="bold"
-              color="grey"
+              color="green"
               textAlign="center"
             >
               Role : Fullstack Developer
+            </Text>
+            <Text
+              fontSize="16px"
+              fontWeight="bold"
+              color="yellow"
+              textAlign="center"
+            >
+              {"Token : " + token}
             </Text>
           </GridItem>
         </Grid>

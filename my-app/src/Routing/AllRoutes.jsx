@@ -1,8 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import LoginForm from "../Components/LoginForm";
 import AdminDashboard from "../Pages/AdminDashboard";
+import AllProduts from "../Pages/AllProducts";
 import Cart from "../Pages/Cart";
 import Home from "../Pages/Home";
+import SingleProductPage from "../Pages/SingleProductPage";
 // import Login from "../Pages/Login";
 import UserDashBoard from "../Pages/UserDashboard";
 import PrivateRoutes from "./PrivateRoutes";
@@ -33,6 +35,22 @@ function AllRoutes() {
         element={
           <PrivateRoutes>
             <AdminDashboard />
+          </PrivateRoutes>
+        }
+      />
+      <Route
+        path="/products"
+        element={
+          <PrivateRoutes>
+            <AllProduts />
+          </PrivateRoutes>
+        }
+      />
+      <Route
+        path="/products/:id"
+        element={
+          <PrivateRoutes>
+            <SingleProductPage />
           </PrivateRoutes>
         }
       />
