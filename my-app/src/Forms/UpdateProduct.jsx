@@ -18,7 +18,6 @@ const initState = {
 
 function UpdateProduct() {
   const [formState, setFormState] = useState(initState);
-  const [productId, setProductId] = useState("");
 
   // on input change
   const handleChange = (e) => {
@@ -28,36 +27,30 @@ function UpdateProduct() {
     setFormState({ ...formState, [name]: val });
   };
 
-  // product id set
-  const handleProductIdChange = (e) => {
-    setProductId(e.target.val);
-  };
-
   // on submit - add product and set formState to initial state
   const handleSubmit = (e) => {
     e.preventDefault();
-    patchGymProducts(productId, formState)
+    patchGymProducts(formState)
       .then((res) => {
         setFormState(initState);
-        setProductId("");
         alert("Product updated successfully");
       })
       .catch((err) => alert("Something went wrong, can't be updated"));
   };
 
   return (
-    <Box w="70%" m="auto" p="10px" border="5px solid grey">
+    <Box w="70%" m="auto" p="10px" border="0px solid grey">
       <Heading as="h4" size="lg" textAlign="center" color="grey">
         Update Product
       </Heading>
       <FormControl>
         <VStack>
           <Input
-            type="number"
+            type="text"
             placeholder="Enter product id"
             name="id"
-            value={productId}
-            onChange={(e) => handleProductIdChange(e)}
+            value={formState.id}
+            onChange={(e) => handleChange(e)}
           />
           <Input
             type="text"

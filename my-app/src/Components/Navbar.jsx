@@ -22,39 +22,57 @@ import PopUpLoginForm from "./PopUpLoginForm";
 
 // Menu options object
 const menuObj = [
-  { link: "https://www.cult.fit/fitness", heading: "FITNESS", spacer: true },
   {
+    id: 1,
+    link: "https://www.cult.fit/fitness",
+    heading: "FITNESS",
+    spacer: true,
+  },
+  {
+    id: 2,
     link: "https://www.cult.fit/care/diagnostic-tests",
     heading: "CARE",
     spacer: true,
   },
-  { link: "https://www.cult.fit/mind/therapy", heading: "MIND", spacer: true },
-  { link: "https://cultsport.com/", heading: "STORE", spacer: false },
+  {
+    id: 3,
+    link: "https://www.cult.fit/mind/therapy",
+    heading: "MIND",
+    spacer: true,
+  },
+  { id: 4, link: "https://cultsport.com/", heading: "STORE", spacer: false },
 ];
 
 function Navbar() {
   const activeStyle = {
-    color: "rgba(0, 0, 0, 0.24)",
+    color: "gray",
   };
 
   return (
     <Box
       width="100%"
-      height="60px"
+      height="auto"
       marginInline="auto"
-      paddingInline="24px"
+      paddingInline={{ base: "0px", sm: "24px" }}
       backgroundImage="linear-gradient(to bottom, #171A26, rgba(23, 26, 38, 0.0001))"
       backgroundColor="transparent"
-      position="sticky"
+      position="fixed" //sticky earlier, but didn't work properly
       top="0"
       zIndex="1"
     >
-      <Flex border="2px solid black" align="center" h="100%">
+      <Flex
+        // border="2px solid white"
+        justifyContent="center"
+        alignItems="center"
+        h="100%"
+        direction={{ base: "column", sm: "column", md: "column", lg: "row" }}
+        rowGap={{ base: "10px" }}
+      >
         {/* Logo */}
-        <Box bg="red">
+        <Box bg="none">
           <NavLink to="/">
             <Image
-              h="35px"
+              h={{ base: "50px", sm: "40px", md: "35px" }}
               src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_120,q_auto:eco,dpr_2,f_auto,fl_progressive//image/test/brand-logo/vman-and-white-cult-text.png"
               // src="/logo.png"
               alt="logo"
@@ -64,34 +82,38 @@ function Navbar() {
         <Spacer />
 
         {/* Menu options - all linked to original website */}
-        <Box width="30%" bg="none" color="white">
-          <Flex align="center" bg="red">
+        <Box
+          width={{ base: "90%", sm: "70%", lg: "30%" }}
+          bg="none"
+          color="white"
+        >
+          <Flex align="center" bg="none">
             {/* Logic for menu options */}
             {menuObj.map((el, index) =>
               el.spacer ? (
                 <>
                   <NavLink
+                    // key={el.index}
                     to={el.link}
-                    key={el.index}
                     style={({ isActive }) =>
                       isActive ? activeStyle : undefined
                     }
                     end
                   >
-                    <Heading as="h5" size="md">
+                    <Heading as="h5" size={{ base: "lg", md: "md" }}>
                       {el.heading}
                     </Heading>
                   </NavLink>
-                  <Spacer key={el.index} />
+                  <Spacer />
                 </>
               ) : (
                 <NavLink
+                  // key={el.index}
                   to={el.link}
-                  key={el.index}
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
                   end
                 >
-                  <Heading as="h5" size="md">
+                  <Heading as="h5" size={{ base: "lg", md: "md" }}>
                     {el.heading}
                   </Heading>
                 </NavLink>
@@ -102,7 +124,7 @@ function Navbar() {
         <Spacer />
 
         {/* right side */}
-        <Box w="25%" bg="green" color="white">
+        <Box w={{ base: "90%", md: "70%", lg: "25%" }} bg="none" color="white">
           <Flex align="center">
             {/* Location button */}
             <NavLink to="#" end>
@@ -110,7 +132,7 @@ function Navbar() {
                 <MenuButton
                   as={Button}
                   colorScheme="none"
-                  fontSize="16px"
+                  fontSize={{ base: "20px", md: "16px" }}
                   fontWeight="700"
                   _hover={{ bg: "#fff", color: "#333" }}
                 >
@@ -149,7 +171,7 @@ function Navbar() {
                 colorScheme="transparent"
                 variant="outline"
                 border="3px solid white"
-                fontSize="16px"
+                fontSize={{ base: "20px", md: "16px" }}
                 fontWeight="700"
               >
                 Get App
@@ -172,7 +194,7 @@ function Navbar() {
                 h="44px"
                 _hover={{ bg: "#333" }}
               >
-                <Icon as={BsCart3} fontSize="20px" />
+                <Icon as={BsCart3} fontSize={{ base: "24px", md: "20px" }} />
               </Button>
             </NavLink>
           </Flex>

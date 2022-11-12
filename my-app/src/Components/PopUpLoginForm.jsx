@@ -20,6 +20,11 @@ import LoginForm from "./LoginForm";
 
 function PopUpLoginForm() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleCloseLoginModal = () => {
+    onClose();
+  };
+
   return (
     <>
       {/* modal opening button */}
@@ -30,10 +35,10 @@ function PopUpLoginForm() {
         h="44px"
         _hover={{ bg: "#333" }}
       >
-        <Icon as={CiUser} fontSize="20px" />
+        <Icon as={CiUser} fontSize={{ base: "28px",sm:"26px", md: "20px" }}  />
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={handleCloseLoginModal}>
         <ModalOverlay />
         <ModalContent bg="black" color="white">
           <ModalHeader mb="20px">
@@ -59,7 +64,7 @@ function PopUpLoginForm() {
 
           <ModalBody>
             {/* Form */}
-            <LoginForm />
+            <LoginForm handleCloseLoginModal={handleCloseLoginModal} />
           </ModalBody>
 
           <ModalFooter>
