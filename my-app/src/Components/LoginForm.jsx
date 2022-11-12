@@ -21,7 +21,7 @@ const initState = {
   password: "",
 };
 
-function LoginForm() {
+function LoginForm({ handleCloseLoginModal }) {
   // Authentication
   const { isAuth, token, handleUserLogin, handleToken } =
     useContext(AuthContext);
@@ -80,9 +80,11 @@ function LoginForm() {
   // Redirecting user/admin to their respective dashboards basis on the token, if token includes word "admin" then send to admin dashboard otherwise send to userDashboard
   if (token.length !== 0 && token.includes("admin")) {
     alert("admin login successful");
+    handleCloseLoginModal();
     return <Navigate to="/admindashboard" />;
   } else if (token.length !== 0) {
     alert("user login successful");
+    handleCloseLoginModal();
     return <Navigate to="/userdashboard" />;
   }
 

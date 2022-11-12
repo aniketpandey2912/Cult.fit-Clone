@@ -41,7 +41,7 @@ function AddProduct() {
   };
 
   return (
-    <Box w="70%" m="auto" p="10px" border="5px solid green">
+    <Box w="70%" m="auto" p="10px" border="0px solid green">
       <Heading as="h4" size="lg" textAlign="center" color="green">
         Add Product
       </Heading>

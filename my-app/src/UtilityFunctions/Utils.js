@@ -96,16 +96,17 @@ export const deleteGymProducts = (id) => {
   });
 };
 
-// update gym product
-export const patchGymProducts = (id, data) => {
-  console.log("id:", id, "data:", data);
+// update gym product - obj needs to be passed and here we will destructure data
+export const patchGymProducts = ({ id, title, img, price, sold = false }) => {
+  console.log("id:", id);
   return axios({
     method: "patch",
     url: `http://localhost:3000/products/${id}`,
     data: {
-      title: data.title,
-      img: data.img,
-      price: data.price,
+      title: title,
+      img: img,
+      price: price,
+      sold: sold,
     },
   }).then((res) => res);
 };

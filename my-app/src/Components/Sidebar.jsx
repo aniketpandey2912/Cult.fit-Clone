@@ -26,9 +26,9 @@ function Sidebar(props) {
   const { avatar, name } = props;
 
   return (
-    <Box h="100%" border="2px solid black">
+    <Box h="100%" border="0px solid black">
       {/* Avatar view */}
-      <Box py="20px" border="1px solid red">
+      <Box py="50px" border="0px solid red" bg="blackAlpha.900">
         <Grid templateColumns="repeat(2, 30% 70%)" gap={0} alignItems="center">
           <GridItem h="auto">
             <Avatar
@@ -43,17 +43,25 @@ function Sidebar(props) {
             <Text
               fontSize="22px"
               fontWeight="bold"
-              color="black"
+              color="white"
               textAlign="center"
             >
               {name || "Aniket Pandey (Admin)"}
+            </Text>
+            <Text
+              fontSize="16px"
+              fontWeight="bold"
+              color="grey"
+              textAlign="center"
+            >
+              Role : Fullstack Developer
             </Text>
           </GridItem>
         </Grid>
       </Box>
 
       {/* details */}
-      <Box py="20px" border="1px solid green">
+      <Box py="48px" border="0px solid green" bg="blackAlpha.700">
         {details.map((el) => (
           <NavLink
             key={el.id}

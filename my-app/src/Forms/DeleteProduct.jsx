@@ -24,7 +24,7 @@ function DeleteProduct() {
   };
 
   return (
-    <Box w="70%" m="auto" p="10px" border="5px solid red">
+    <Box w="70%" m="auto" p="10px" border="0px solid red">
       <Heading as="h4" size="lg" textAlign="center" color="red">
         Delete Product
       </Heading>
