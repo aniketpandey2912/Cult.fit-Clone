@@ -4,6 +4,7 @@ import AdminDashboard from "../Pages/AdminDashboard";
 import AllProduts from "../Pages/AllProducts";
 import Cart from "../Pages/Cart";
 import Home from "../Pages/Home";
+import PageNotFound from "../Pages/PageNotFound";
 import SingleProductPage from "../Pages/SingleProductPage";
 // import Login from "../Pages/Login";
 import UserDashBoard from "../Pages/UserDashboard";
@@ -54,6 +55,7 @@ function AllRoutes() {
           </PrivateRoutes>
         }
       />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 }

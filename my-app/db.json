@@ -81,6 +81,83 @@
       "price": 40000,
       "sold": false,
       "id": 8
+    },
+    {
+      "title": "UT7001S26, (Black, Blue) Steel, Wire Brake, 26T City Bike (Single Speed)",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/VdG9oF1ViYTEBKrcgficLEcz",
+      "price": "7999",
+      "sold": false,
+      "id": 9
+    },
+    {
+      "title": "Smartcross b1: Bluetooth enabled elliptical cross trainer",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/KF46i4r6G5posz6tthrs68Vn",
+      "price": "19999",
+      "sold": false,
+      "id": 10
+    },
+    {
+      "title": "FK4000 (13.2lbs Flywheel) with Free Installation Spinner Exercise Bike",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/nCDTciXNxcFyAWhcgAjsAxW2",
+      "price": "12499",
+      "sold": false,
+      "id": 11
+    },
+    {
+      "title": "Workout Gloves",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/zkhLReorkx9L2bcBs1WAnmbn",
+      "price": "1049",
+      "sold": false,
+      "id": 12
+    },
+    {
+      "title": "Gymnastic Gloves",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/moh6wUaAi2wW5qYkQ6bmQjtE",
+      "price": "1249",
+      "sold": false,
+      "id": 13
+    },
+    {
+      "title": "Duffle Bag with Shoe Compartment ",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/bSt7FswCgcXUJGAFzhaMxLqP",
+      "price": "1199",
+      "sold": false,
+      "id": 14
+    },
+    {
+      "title": "2 in 1 Lightweight Yoga Mat",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/UFEqV6v4mHfdL8ndaTwu5AQE",
+      "price": "719",
+      "sold": false,
+      "id": 15
+    },
+    {
+      "title": "Azani Pure & Ultra-Strong Omega 3 Fish Oil | Omega 3(1000mg)+Omega 6,7 & 9 + Vitamin D3, 60 Capsules",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/4gUCtbuHsPaUtCem2uqZZDUZ",
+      "price": "499",
+      "sold": false,
+      "id": 16
+    },
+    {
+      "title": "Azani Endurance PE Herbal Supplement | Time, Stamina |Safed Musli, Fenugreek |Men, 180 Capsules",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/UN7J4nDzBDYtnPY99L8LEWrN",
+      "price": "1159",
+      "sold": false,
+      "id": 17
+    },
+    {
+      "title": "Azani PMS Gummies |Balances PMS,Period Pain, Cramp Relief, Decreases Mood Swings & Acne, 30 Gummies",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/qKfuQvNB7SLDQwjqFBznXes4",
+      "price": "349",
+      "sold": false,
+      "id": 18
+    },
+    {
+      "title": "Boldfit Curcumin Complex Supplements - 60 Veg Tablets",
+      "img": "https://cdn-images.cure.fit/www-curefit-com/image/upload/fl_progressive,f_auto,q_auto:eco,w_300,h_400,ar_0.75,c_fill/dpr_2/cultgear-content/J5ruU5AQQBogHSqPkS1Q4pMR",
+      "price": "567",
+      "sold": false,
+      "id": 19
     }
   ]
 }
