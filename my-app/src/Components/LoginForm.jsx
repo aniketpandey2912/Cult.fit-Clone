@@ -55,7 +55,7 @@ function LoginForm({ handleCloseLoginModal }) {
   const handleUserLoginRequest = () => {
     userLoginRequest(formState)
       .then((res) => {
-        console.log("login res:", res);
+        // console.log("login res:", res);
         handleUserLogin(); // setting authentication to true
         handleToken(res.token); // setting token after successfull login
       })
